@@ -1,0 +1,81 @@
+﻿@page
+
+<head>
+    <title>Asteroids</title>
+    <style>
+        body {
+            display: normal;
+            justify-content: center;
+            align-items: center, top;
+            font-size: large;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: black;
+            font-weight: bold;
+            color: white;
+        }
+        canvas {
+            border: 1px solid black;
+            background-image: url('background.jpg');
+            background-size: cover;
+            display: block;
+            margin: 0 auto;
+        }
+        .gamecontrol {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            font-size: large;
+        }
+        .control {
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            height: 100px;
+        }      
+        button {
+            border: none;
+            background: none;
+        }
+        button img {
+            display: flex;
+            height: 50px;
+        }
+        .scoreboard {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            font-size: large;
+            background-color: black;
+        }
+        .score {
+            padding: 0 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="scoreboard" id="scoreboard">
+    <div class="score">Score board: </div>
+</div>
+<canvas id="canvas" width="1800" height="800"></canvas>
+
+<div class="gamecontrol">
+    <div class="control">Input your name to join the game: </div>
+    <div class="control"><input type="text" id="playerNameInput"/></div>
+    <div class="control"><button id="joinGame"><img src="Play_button.png"></button></div>
+    <div class="control"><button id="RestartButton"><img src="Restart_button.png"></button></div>
+</div>
+
+<div id="joinedPlayers"></div>
+
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/gamecontrol.js"></script>
+<script src="~/js/rendering.js"></script>
+
+</body>
