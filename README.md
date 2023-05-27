@@ -6,3 +6,5 @@
     - Core game logic
     - Framing queue and service
     - Asteroid, bullet, spaceship/player classes.
+
+Watch the talk where this project was created live with GitHub Copilot at http://aka.ms/Build/ScottandMark
