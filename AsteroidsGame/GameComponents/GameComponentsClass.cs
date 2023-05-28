@@ -9,39 +9,7 @@ namespace Asteroids.GameComponents
     // all functions and properties are public
     public class Player
     {
-        public string connectionId { get; set; }
-        public string name { get; set; }
-        public float x { get; set; }
-        public float y { get; set; }
-        public float angle { get; set; }
-        public float speed { get; set; }
-        public float acceleration { get; set; }
-        public int size { get; set; } = 50;
-        public uint Score { get; set; } = 0;
-        public bool isDead { get; set; } = false;
-
-        public Player(string ConnectionId, string Name, float x, float y)
-        {
-            connectionId = ConnectionId;
-            name = Name;
-            this.x = x;
-            this.y = y;
-        }
-
-        public void Update(float x, float y, float angle, float speed, float acceleration)
-        {
-            this.x = x;
-            this.y = y;
-            this.angle = angle;
-            this.speed = speed;
-            this.acceleration = acceleration;
-        }
-
-        public void Update(float x, float y)
-        {
-            this.x = x;
-            this.y = y;
-        }
+        
     }
 
 
@@ -51,26 +19,7 @@ namespace Asteroids.GameComponents
     // all functions and properties are public
     public class Bullet
     {
-        public string connectionId { get; set; }
-        public float x { get; set; }
-        public float y { get; set; }
-        public float angle { get; set; }
-        public float speed { get; set; } = 10;
-        public int size { get; set; } = 30;
 
-        public Bullet(string ConnectionId, float x, float y, float angle)
-        {
-            connectionId = ConnectionId;
-            this.x = x;
-            this.y = y;
-            this.angle = angle;
-        }
-
-        public void Update(float x, float y)
-        {
-            this.x = x;
-            this.y = y;
-        }
     }
 
 
@@ -80,26 +29,7 @@ namespace Asteroids.GameComponents
     // all functions and properties are public
     public class Asteroid
     {
-        public float x { get; set; }
-        public float y { get; set; }
-        public float dx { get; set; }
-        public float dy { get; set; }
-        public int size { get; set; }
-
-        public Asteroid(float x, float y, float dx, float dy, int size)
-        {
-            this.x = x;
-            this.y = y;
-            this.dx = dx;
-            this.dy = dy;
-            this.size = size;
-        }
-
-        public void Update(float x, float y)
-        {
-            this.x = x;
-            this.y = y;
-        }
+       
     }
 
 }

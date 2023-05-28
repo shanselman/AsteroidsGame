@@ -46,45 +46,13 @@ namespace Asteroids.GameComponents
         // Asteroid size is 50-90, dx and dy are random between -2 and 2
         public List<Asteroid> GenerateAsteroids(int count)
         {
-            List<Asteroid> asteroids = new List<Asteroid>();
-            for (int i = 0; i < count; i++)
-            {
-                float x = _random.Next(0, _width);
-                float y = _random.Next(0, _height);
-                int size = _random.Next(50, 90);
-                float dx = (float)(_random.NextDouble() * 4 - 2);
-                float dy = (float)(_random.NextDouble() * 4 - 2);
-                asteroids.Add(new Asteroid(x, y, dx, dy, size));
-            }
-            return asteroids;
+
         }
 
-        // A method that moves the asteroids based on their dx, dy. Limit the movement to the screen size
+        // a method that moves the asteroids based on their dx, dy. Limit the movement to the screen size
         public void MoveAsteroids()
         {
-            for (int i = 0; i < Asteroids.Count; i++)
-            {
-                Asteroids[i].x += Asteroids[i].dx;
-                Asteroids[i].y += Asteroids[i].dy;
 
-                if (Asteroids[i].x > _width)
-                {
-                    Asteroids[i].x = 0 - Asteroids[i].size;
-                }
-                else if (Asteroids[i].x < 0 - Asteroids[i].size)
-                {
-                    Asteroids[i].x = _width;
-                }
-
-                if (Asteroids[i].y > _height)
-                {
-                    Asteroids[i].y = 0 - Asteroids[i].size;
-                }
-                else if (Asteroids[i].y < 0 - Asteroids[i].size)
-                {
-                    Asteroids[i].y = _height;
-                }
-            }
         }
 
         // A method that moves all players based on its speed and angle. Limit the movement to the screen size
@@ -148,29 +116,7 @@ namespace Asteroids.GameComponents
         // A method that detects collision between bullets and asteroids, remove asteroids and bullets if they collide, add score to the player who shot the bullet (using connectionId)
         public void BulletAsteroidsCollisionDetection()
         {
-            foreach (var bullet in Bullets)
-            {
-                for (int j = 0; j < Asteroids.Count; j++)
-                {
-                    var dx = bullet.x - Asteroids[j].x;
-                    var dy = bullet.y - Asteroids[j].y;
-                    var distance = MathF.Sqrt(dx * dx + dy * dy);
-                    if (distance < Asteroids[j].size / 2)
-                    {
-                        Explosions.Add(Asteroids[j]);
-                        Bullets.Remove(bullet);
-                        Asteroids.RemoveAt(j);
-                        foreach (var player in Players.Values)
-                        {
-                            if (player.connectionId == bullet.connectionId)
-                            {
-                                player.Score += 100;
-                            }
-                        }
-                        break;
-                    }
-                }
-            }
+
         }
 
         // A method that detects collision between ship and asteroids
