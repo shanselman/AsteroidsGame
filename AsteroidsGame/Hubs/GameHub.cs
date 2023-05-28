@@ -43,7 +43,7 @@ namespace Asteroids.Hubs
 
         public async Task RestartGame()
         {
-            _game.Initialzie();
+            _game.Initialize();
         }
 
         public async Task KeyDown(string key, int keyCode)
