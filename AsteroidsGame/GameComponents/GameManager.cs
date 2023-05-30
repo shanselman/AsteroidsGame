@@ -20,10 +20,10 @@ namespace Asteroids.GameComponents
         public GameManager(IHubContext<GameHub> gameHub)
         {
             _hubContext = gameHub;
-            Initialzie();
+            Initialize();
         }
 
-        public void Initialzie()
+        public void Initialize()
         {
             _game = new Game(_width, _height);
             _game.State = GameState.Running;
